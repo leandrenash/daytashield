@@ -1,6 +1,6 @@
 # API Reference
 
-Complete API documentation for DataShield.
+Complete API documentation for DaytaShield.
 
 ## Core Module
 

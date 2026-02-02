@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from datashield import JSONProcessor
-from datashield.core.result import ValidationStatus
+from daytashield import JSONProcessor
+from daytashield.core.result import ValidationStatus
 
 
 class TestJSONProcessor:

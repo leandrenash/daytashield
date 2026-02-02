@@ -1,8 +1,8 @@
-site_name: DataShield
+site_name: DaytaShield
 site_description: The missing validation layer between unstructured data and AI systems
-site_url: https://datashield.dev
-repo_url: https://github.com/datashield/datashield
-repo_name: datashield/datashield
+site_url: https://daytashield.dev
+repo_url: https://github.com/daytashield/daytashield
+repo_name: daytashield/daytashield
 
 theme:
   name: material
@@ -66,8 +66,8 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/datashield/datashield
+      link: https://github.com/daytashield/daytashield
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/datashield
+      link: https://discord.gg/daytashield
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/datashield/
+      link: https://pypi.org/project/daytashield/

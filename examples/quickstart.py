@@ -1,10 +1,10 @@
-"""DataShield Quickstart Example.
+"""DaytaShield Quickstart Example.
 
-This example demonstrates the basic usage of DataShield for validating
+This example demonstrates the basic usage of DaytaShield for validating
 structured data against schema and compliance rules.
 """
 
-from datashield import (
+from daytashield import (
     ComplianceValidator,
     FreshnessValidator,
     SchemaValidator,
@@ -64,7 +64,7 @@ invoice_schema = {
 def main() -> None:
     """Run the quickstart example."""
     print("=" * 60)
-    print("DataShield Quickstart Example")
+    print("DaytaShield Quickstart Example")
     print("=" * 60)
 
     # Example 1: Basic Schema Validation

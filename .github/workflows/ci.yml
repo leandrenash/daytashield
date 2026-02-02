@@ -37,7 +37,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest tests -v --cov=datashield --cov-report=xml --cov-report=term-missing
+          pytest tests -v --cov=daytashield --cov-report=xml --cov-report=term-missing
 
       - name: Upload coverage
         uses: codecov/codecov-action@v4
@@ -89,11 +89,11 @@ jobs:
         with:
           context: .
           push: false
-          tags: datashield:test
+          tags: daytashield:test
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
       - name: Test Docker image
         run: |
-          docker run --rm datashield:test --version
-          docker run --rm datashield:test info
+          docker run --rm daytashield:test --version
+          docker run --rm daytashield:test info

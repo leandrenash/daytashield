@@ -6,9 +6,9 @@ from typing import Any
 
 import pytest
 
-from datashield import ComplianceValidator
-from datashield.core.result import ValidationStatus, create_result
-from datashield.rules import GDPRRules, HIPAARules, PIIDetector
+from daytashield import ComplianceValidator
+from daytashield.core.result import ValidationStatus, create_result
+from daytashield.rules import GDPRRules, HIPAARules, PIIDetector
 
 
 class TestPIIDetector:

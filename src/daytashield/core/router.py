@@ -7,7 +7,7 @@ from typing import Any, Callable
 
 from pydantic import BaseModel, Field
 
-from datashield.core.result import ValidationResult, ValidationStatus
+from daytashield.core.result import ValidationResult, ValidationStatus
 
 
 class RouteAction(str, Enum):

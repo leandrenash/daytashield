@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to DataShield will be documented in this file.
+All notable changes to DaytaShield will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2024-01-21
 
 ### Added
-- Initial release of DataShield
+- Initial release of DaytaShield
 - Core validation pipeline with chained validators
 - **Validators**:
   - `SchemaValidator` - JSON Schema and Pydantic model validation
@@ -33,13 +33,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `AuditTrail` - Immutable JSON Lines audit logging
   - `ValidationResult` - Comprehensive result with messages, provenance, metadata
 - **CLI**:
-  - `datashield validate` - Validate files against schema and rules
-  - `datashield watch` - Watch directory for new files
-  - `datashield audit` - Query audit trail
-  - `datashield info` - Show configuration and status
+  - `daytashield validate` - Validate files against schema and rules
+  - `daytashield watch` - Watch directory for new files
+  - `daytashield audit` - Query audit trail
+  - `daytashield info` - Show configuration and status
 - Docker support with multi-stage build
 - GitHub Actions CI/CD pipeline
 - Comprehensive documentation and examples
 
-[Unreleased]: https://github.com/datashield/datashield/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/datashield/datashield/releases/tag/v0.1.0
+[Unreleased]: https://github.com/daytashield/daytashield/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/daytashield/daytashield/releases/tag/v0.1.0

@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from datashield.rules.base import ComplianceRule, ComplianceViolation
+from daytashield.rules.base import ComplianceRule, ComplianceViolation
 
 
 class GDPRRules(ComplianceRule):
@@ -341,7 +341,7 @@ class GDPRRules(ComplianceRule):
         Returns:
             True if personal data is likely present
         """
-        from datashield.rules.pii import PIIDetector
+        from daytashield.rules.pii import PIIDetector
 
         detector = PIIDetector(patterns=["email", "phone_us", "ssn"])
         violations = detector.check(None, text_content)

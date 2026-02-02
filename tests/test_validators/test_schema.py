@@ -7,8 +7,8 @@ from typing import Any
 import pytest
 from pydantic import BaseModel
 
-from datashield import SchemaValidator
-from datashield.core.result import ValidationResult, ValidationStatus, create_result
+from daytashield import SchemaValidator
+from daytashield.core.result import ValidationResult, ValidationStatus, create_result
 
 
 class TestSchemaValidatorJSONSchema:

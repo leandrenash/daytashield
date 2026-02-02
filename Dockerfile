@@ -1,4 +1,4 @@
-# DataShield Docker Image
+# DaytaShield Docker Image
 # Multi-stage build for minimal image size
 
 # Build stage
@@ -32,23 +32,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy wheel from builder
 COPY --from=builder /app/dist/*.whl /tmp/
 
-# Install datashield
+# Install daytashield
 RUN pip install --no-cache-dir /tmp/*.whl && \
     rm /tmp/*.whl
 
 # Create non-root user
-RUN useradd --create-home --shell /bin/bash datashield
-USER datashield
+RUN useradd --create-home --shell /bin/bash daytashield
+USER daytashield
 
 # Set working directory
 WORKDIR /data
 
 # Default command
-ENTRYPOINT ["datashield"]
+ENTRYPOINT ["daytashield"]
 CMD ["--help"]
 
 # Labels
-LABEL org.opencontainers.image.title="DataShield"
+LABEL org.opencontainers.image.title="DaytaShield"
 LABEL org.opencontainers.image.description="The missing validation layer between unstructured data and AI systems"
-LABEL org.opencontainers.image.source="https://github.com/datashield/datashield"
+LABEL org.opencontainers.image.source="https://github.com/daytashield/daytashield"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

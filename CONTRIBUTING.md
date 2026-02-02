@@ -1,6 +1,6 @@
-# Contributing to DataShield
+# Contributing to DaytaShield
 
-Thank you for your interest in contributing to DataShield! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to DaytaShield! This document provides guidelines and information for contributors.
 
 ## Code of Conduct
 
@@ -12,8 +12,8 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 
 1. **Fork and clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/datashield.git
-   cd datashield
+   git clone https://github.com/YOUR_USERNAME/daytashield.git
+   cd daytashield
    ```
 
 2. **Create a virtual environment**
@@ -39,7 +39,7 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 pytest
 
 # Run with coverage
-pytest --cov=datashield --cov-report=html
+pytest --cov=daytashield --cov-report=html
 
 # Run specific test file
 pytest tests/test_validators/test_schema.py
@@ -70,7 +70,7 @@ Before submitting a bug report:
 2. Use the bug report template
 3. Include:
    - Python version
-   - DataShield version
+   - DaytaShield version
    - Operating system
    - Minimal reproducible example
    - Expected vs actual behavior
@@ -130,8 +130,8 @@ Before submitting a bug report:
 ## Project Structure
 
 ```
-datashield/
-├── src/datashield/
+daytashield/
+├── src/daytashield/
 │   ├── core/          # Core pipeline, router, audit
 │   ├── validators/    # Schema, semantic, freshness, compliance
 │   ├── processors/    # PDF, CSV, JSON processors
@@ -145,10 +145,10 @@ datashield/
 
 ## Adding New Validators
 
-1. Create a new file in `src/datashield/validators/`
+1. Create a new file in `src/daytashield/validators/`
 2. Extend `BaseValidator`:
    ```python
-   from datashield.validators.base import BaseValidator
+   from daytashield.validators.base import BaseValidator
    
    class MyValidator(BaseValidator):
        name = "my_validator"
@@ -163,10 +163,10 @@ datashield/
 
 ## Adding New Processors
 
-1. Create a new file in `src/datashield/processors/`
+1. Create a new file in `src/daytashield/processors/`
 2. Extend `BaseProcessor`:
    ```python
-   from datashield.processors.base import BaseProcessor
+   from daytashield.processors.base import BaseProcessor
    
    class MyProcessor(BaseProcessor):
        name = "my_processor"
@@ -182,10 +182,10 @@ datashield/
 
 ## Adding Compliance Rules
 
-1. Create a new file in `src/datashield/rules/`
+1. Create a new file in `src/daytashield/rules/`
 2. Extend `ComplianceRule`:
    ```python
-   from datashield.rules.base import ComplianceRule
+   from daytashield.rules.base import ComplianceRule
    
    class MyRule(ComplianceRule):
        name = "my_rule"
@@ -221,8 +221,8 @@ Releases are automated via GitHub Actions:
 
 ## Questions?
 
-- Open a [Discussion](https://github.com/datashield/datashield/discussions)
-- Join our [Discord](https://discord.gg/datashield)
-- Email: team@datashield.dev
+- Open a [Discussion](https://github.com/daytashield/daytashield/discussions)
+- Join our [Discord](https://discord.gg/daytashield)
+- Email: team@daytashield.dev
 
 Thank you for contributing! 🛡️

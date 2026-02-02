@@ -6,8 +6,8 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from datashield import FreshnessValidator
-from datashield.core.result import ValidationStatus, create_result
+from daytashield import FreshnessValidator
+from daytashield.core.result import ValidationStatus, create_result
 
 
 class TestFreshnessValidator:

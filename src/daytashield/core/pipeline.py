@@ -9,11 +9,11 @@ from typing import TYPE_CHECKING, Any, BinaryIO
 
 from pydantic import BaseModel, Field
 
-from datashield.core.result import ValidationResult, ValidationStatus, create_result
+from daytashield.core.result import ValidationResult, ValidationStatus, create_result
 
 if TYPE_CHECKING:
-    from datashield.processors.base import BaseProcessor
-    from datashield.validators.base import BaseValidator
+    from daytashield.processors.base import BaseProcessor
+    from daytashield.validators.base import BaseValidator
 
 
 class PipelineConfig(BaseModel):
@@ -35,7 +35,7 @@ class ValidationPipeline:
     aggregation, and provides hooks for auditing.
 
     Example:
-        >>> from datashield import ValidationPipeline, SchemaValidator, FreshnessValidator
+        >>> from daytashield import ValidationPipeline, SchemaValidator, FreshnessValidator
         >>> pipeline = ValidationPipeline([
         ...     SchemaValidator(schema={"type": "object"}),
         ...     FreshnessValidator(max_age="7d"),

@@ -80,8 +80,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            datashield/datashield:latest
-            datashield/datashield:${{ steps.version.outputs.VERSION }}
+            daytashield/daytashield:latest
+            daytashield/daytashield:${{ steps.version.outputs.VERSION }}
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ steps.version.outputs.VERSION }}
           cache-from: type=gha

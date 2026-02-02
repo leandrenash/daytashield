@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from datashield import CSVProcessor
-from datashield.core.result import ValidationStatus
+from daytashield import CSVProcessor
+from daytashield.core.result import ValidationStatus
 
 
 class TestCSVProcessor:

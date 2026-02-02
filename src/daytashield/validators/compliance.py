@@ -6,11 +6,11 @@ from typing import TYPE_CHECKING, Any
 
 from pydantic import Field
 
-from datashield.core.result import ValidationResult, ValidationStatus
-from datashield.validators.base import BaseValidator, ValidatorConfig
+from daytashield.core.result import ValidationResult, ValidationStatus
+from daytashield.validators.base import BaseValidator, ValidatorConfig
 
 if TYPE_CHECKING:
-    from datashield.rules.base import ComplianceRule
+    from daytashield.rules.base import ComplianceRule
 
 
 class ComplianceValidatorConfig(ValidatorConfig):
@@ -30,7 +30,7 @@ class ComplianceValidator(BaseValidator):
     consent flags, etc.
 
     Example:
-        >>> from datashield.rules import HIPAARules, GDPRRules
+        >>> from daytashield.rules import HIPAARules, GDPRRules
         >>> validator = ComplianceValidator(
         ...     rules=[HIPAARules(), GDPRRules()],
         ... )
@@ -86,13 +86,13 @@ class ComplianceValidator(BaseValidator):
         name_lower = name.lower()
 
         if name_lower == "hipaa":
-            from datashield.rules.hipaa import HIPAARules
+            from daytashield.rules.hipaa import HIPAARules
             return HIPAARules()
         elif name_lower == "gdpr":
-            from datashield.rules.gdpr import GDPRRules
+            from daytashield.rules.gdpr import GDPRRules
             return GDPRRules()
         elif name_lower == "pii":
-            from datashield.rules.pii import PIIDetector
+            from daytashield.rules.pii import PIIDetector
             return PIIDetector()
         else:
             raise ValueError(f"Unknown rule pack: {name}. Available: hipaa, gdpr, pii")

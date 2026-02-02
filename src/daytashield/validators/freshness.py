@@ -9,8 +9,8 @@ from typing import Any
 from dateutil import parser as date_parser
 from pydantic import Field
 
-from datashield.core.result import ValidationResult, ValidationStatus
-from datashield.validators.base import BaseValidator, ValidatorConfig
+from daytashield.core.result import ValidationResult, ValidationStatus
+from daytashield.validators.base import BaseValidator, ValidatorConfig
 
 
 class FreshnessValidatorConfig(ValidatorConfig):

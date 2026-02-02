@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "datashield"
+name = "daytashield"
 version = "0.1.0"
 description = "The missing validation layer between unstructured data and AI systems"
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.9"
 authors = [
-    { name = "DataShield Team", email = "team@datashield.dev" }
+    { name = "DaytaShield Team", email = "team@daytashield.dev" }
 ]
 keywords = [
     "data-validation",
@@ -66,16 +66,16 @@ docs = [
     "mkdocs-material>=9.0",
     "mkdocstrings[python]>=0.24",
 ]
-all = ["datashield[ocr,dev,docs]"]
+all = ["daytashield[ocr,dev,docs]"]
 
 [project.scripts]
-datashield = "datashield.cli.main:cli"
+daytashield = "daytashield.cli.main:cli"
 
 [project.urls]
-Homepage = "https://github.com/datashield/datashield"
-Documentation = "https://datashield.dev/docs"
-Repository = "https://github.com/datashield/datashield"
-Issues = "https://github.com/datashield/datashield/issues"
+Homepage = "https://github.com/daytashield/daytashield"
+Documentation = "https://daytashield.dev/docs"
+Repository = "https://github.com/daytashield/daytashield"
+Issues = "https://github.com/daytashield/daytashield/issues"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -83,7 +83,7 @@ include = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/datashield"]
+packages = ["src/daytashield"]
 
 [tool.ruff]
 target-version = "py310"
@@ -108,7 +108,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["datashield"]
+known-first-party = ["daytashield"]
 
 [tool.mypy]
 python_version = "3.9"
@@ -128,10 +128,10 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "-ra -q --cov=datashield --cov-report=term-missing"
+addopts = "-ra -q --cov=daytashield --cov-report=term-missing"
 
 [tool.coverage.run]
-source = ["src/datashield"]
+source = ["src/daytashield"]
 branch = true
 
 [tool.coverage.report]

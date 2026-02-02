@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new feature for DataShield
+about: Suggest a new feature for DaytaShield
 title: "[FEATURE] "
 labels: enhancement
 assignees: ''
@@ -18,7 +18,7 @@ Explain your use case and how this feature would help.
 ## Example
 ```python
 # How you'd like the feature to work
-from datashield import ...
+from daytashield import ...
 
 # Example code
 ```

@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug in DataShield
+about: Report a bug in DaytaShield
 title: "[BUG] "
 labels: bug
 assignees: ''
@@ -10,7 +10,7 @@ assignees: ''
 A clear description of the bug.
 
 ## Environment
-- DataShield version:
+- DaytaShield version:
 - Python version:
 - Operating system:
 - Installation method (pip/docker):
@@ -28,7 +28,7 @@ What actually happened.
 
 ## Minimal Reproducible Example
 ```python
-from datashield import ...
+from daytashield import ...
 
 # Code to reproduce the issue
 ```

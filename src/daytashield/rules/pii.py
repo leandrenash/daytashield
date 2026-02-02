@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from datashield.rules.base import ComplianceRule, ComplianceViolation
+from daytashield.rules.base import ComplianceRule, ComplianceViolation
 
 
 class PIIDetector(ComplianceRule):

@@ -9,7 +9,7 @@ from typing import Any, BinaryIO
 
 from pydantic import BaseModel, Field
 
-from datashield.core.result import Provenance, ValidationResult, ValidationStatus, create_result
+from daytashield.core.result import Provenance, ValidationResult, ValidationStatus, create_result
 
 
 class ProcessorConfig(BaseModel):
@@ -38,7 +38,7 @@ class ProcessedData(BaseModel):
 
 
 class BaseProcessor(ABC):
-    """Abstract base class for all DataShield processors.
+    """Abstract base class for all DaytaShield processors.
 
     Processors are responsible for extracting content and metadata from
     various file formats (PDF, CSV, JSON, etc.) and preparing them for

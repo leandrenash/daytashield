@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Any, Callable, Literal
 
 from pydantic import Field
 
-from datashield.core.pipeline import ValidationPipeline
-from datashield.core.result import ValidationResult, ValidationStatus, create_result
+from daytashield.core.pipeline import ValidationPipeline
+from daytashield.core.result import ValidationResult, ValidationStatus, create_result
 
 if TYPE_CHECKING:
     from langchain_core.callbacks import CallbackManagerForRetrieverRun
@@ -24,14 +24,14 @@ OnFailAction = Literal["filter", "raise", "warn", "tag"]
 class ValidatedRetriever:
     """A LangChain retriever wrapper that validates documents before returning.
 
-    Wraps any LangChain retriever and applies DataShield validation to
+    Wraps any LangChain retriever and applies DaytaShield validation to
     retrieved documents. Invalid documents can be filtered, flagged, or
     cause exceptions based on configuration.
 
     Example:
         >>> from langchain_community.vectorstores import FAISS
-        >>> from datashield import SchemaValidator, FreshnessValidator
-        >>> from datashield.integrations.langchain import ValidatedRetriever
+        >>> from daytashield import SchemaValidator, FreshnessValidator
+        >>> from daytashield.integrations.langchain import ValidatedRetriever
         >>>
         >>> # Create base retriever
         >>> vectorstore = FAISS.from_texts(texts, embeddings)
@@ -212,15 +212,15 @@ class ValidatedRetriever:
         Returns:
             Tagged document (same object, modified metadata)
         """
-        doc.metadata["_datashield_status"] = result.status.value
-        doc.metadata["_datashield_passed"] = result.passed
-        doc.metadata["_datashield_message_count"] = len(result.messages)
+        doc.metadata["_daytashield_status"] = result.status.value
+        doc.metadata["_daytashield_passed"] = result.passed
+        doc.metadata["_daytashield_message_count"] = len(result.messages)
 
         if result.errors:
-            doc.metadata["_datashield_errors"] = [str(e) for e in result.errors[:5]]
+            doc.metadata["_daytashield_errors"] = [str(e) for e in result.errors[:5]]
 
         if "semantic_confidence" in result.metadata:
-            doc.metadata["_datashield_confidence"] = result.metadata["semantic_confidence"]
+            doc.metadata["_daytashield_confidence"] = result.metadata["semantic_confidence"]
 
         return doc
 
@@ -283,7 +283,7 @@ class ValidatedDocumentLoader:
 
     Example:
         >>> from langchain_community.document_loaders import PyPDFLoader
-        >>> from datashield.integrations.langchain import ValidatedDocumentLoader
+        >>> from daytashield.integrations.langchain import ValidatedDocumentLoader
         >>>
         >>> loader = ValidatedDocumentLoader(
         ...     base_loader=PyPDFLoader("document.pdf"),
@@ -346,7 +346,7 @@ class ValidatedDocumentLoader:
                 logger.warning(f"Document validation warning: {result}")
                 yield doc
             elif self.on_fail == "tag":
-                doc.metadata["_datashield_validation"] = result.to_dict()
+                doc.metadata["_daytashield_validation"] = result.to_dict()
                 yield doc
             elif self.on_fail == "raise":
                 raise ValidationError(f"Document validation failed: {result}", result)
@@ -365,7 +365,7 @@ class ValidatedDocumentLoader:
                 logger.warning(f"Document validation warning: {result}")
                 validated.append(doc)
             elif self.on_fail == "tag":
-                doc.metadata["_datashield_validation"] = result.to_dict()
+                doc.metadata["_daytashield_validation"] = result.to_dict()
                 validated.append(doc)
             elif self.on_fail == "raise":
                 raise ValidationError(f"Document validation failed: {result}", result)

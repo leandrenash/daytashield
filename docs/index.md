@@ -1,8 +1,8 @@
-# DataShield
+# DaytaShield
 
 **The missing validation layer between unstructured data and AI systems.**
 
-DataShield validates multimodal data (PDFs, CSVs, JSON, images) before it reaches your RAG pipelines, AI agents, or analytics systems. Stop hallucinations at the source.
+DaytaShield validates multimodal data (PDFs, CSVs, JSON, images) before it reaches your RAG pipelines, AI agents, or analytics systems. Stop hallucinations at the source.
 
 ## Features
 
@@ -17,11 +17,11 @@ DataShield validates multimodal data (PDFs, CSVs, JSON, images) before it reache
 ## Quick Start
 
 ```bash
-pip install datashield
+pip install daytashield
 ```
 
 ```python
-from datashield import ValidationPipeline, SchemaValidator, FreshnessValidator
+from daytashield import ValidationPipeline, SchemaValidator, FreshnessValidator
 
 pipeline = ValidationPipeline([
     SchemaValidator(schema={"type": "object", "required": ["id", "content"]}),
@@ -37,26 +37,26 @@ result = pipeline.validate({
 print(result.status)  # ValidationStatus.PASSED
 ```
 
-## Why DataShield?
+## Why DaytaShield?
 
 - **80% of enterprise data is unstructured** (PDFs, images, videos, logs, emails)
 - **Data quality is the #1 blocker to AI adoption** (30% of AI projects fail due to bad data)
 - **Current solutions extract and index, but don't validate**
 - **Result**: Hallucinations, compliance violations, wasted compute, customer distrust
 
-DataShield is the missing piece: validate **before** your data reaches AI systems.
+DaytaShield is the missing piece: validate **before** your data reaches AI systems.
 
 ## Installation
 
 ```bash
 # Basic installation
-pip install datashield
+pip install daytashield
 
 # With OCR support
-pip install datashield[ocr]
+pip install daytashield[ocr]
 
 # With all extras
-pip install datashield[all]
+pip install daytashield[all]
 ```
 
 ## Next Steps

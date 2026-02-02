@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from datashield.rules.base import ComplianceRule, ComplianceViolation
+from daytashield.rules.base import ComplianceRule, ComplianceViolation
 
 
 class HIPAARules(ComplianceRule):
@@ -180,7 +180,7 @@ class HIPAARules(ComplianceRule):
 
         # In strict mode, check for general PII in healthcare context
         if self.strict and is_healthcare_context:
-            from datashield.rules.pii import PIIDetector
+            from daytashield.rules.pii import PIIDetector
 
             pii_detector = PIIDetector(
                 patterns=["ssn", "email", "phone_us", "date_of_birth"],

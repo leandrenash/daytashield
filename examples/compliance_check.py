@@ -1,18 +1,18 @@
-"""DataShield Compliance Checking Example.
+"""DaytaShield Compliance Checking Example.
 
-This example demonstrates how to use DataShield for compliance validation,
+This example demonstrates how to use DaytaShield for compliance validation,
 including HIPAA, GDPR, and PII detection.
 """
 
-from datashield import ComplianceValidator, DataRouter, RouteAction, ValidationPipeline
-from datashield.core.audit import AuditTrail
-from datashield.rules import GDPRRules, HIPAARules, PIIDetector
+from daytashield import ComplianceValidator, DataRouter, RouteAction, ValidationPipeline
+from daytashield.core.audit import AuditTrail
+from daytashield.rules import GDPRRules, HIPAARules, PIIDetector
 
 
 def main() -> None:
     """Run the compliance checking example."""
     print("=" * 60)
-    print("DataShield Compliance Checking Example")
+    print("DaytaShield Compliance Checking Example")
     print("=" * 60)
 
     # Example 1: PII Detection

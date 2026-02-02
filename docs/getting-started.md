@@ -1,27 +1,27 @@
-# Getting Started with DataShield
+# Getting Started with DaytaShield
 
-DataShield is the missing validation layer between unstructured data and AI systems. This guide will help you get up and running quickly.
+DaytaShield is the missing validation layer between unstructured data and AI systems. This guide will help you get up and running quickly.
 
 ## Installation
 
 ```bash
-pip install datashield
+pip install daytashield
 ```
 
 For optional features:
 
 ```bash
 # OCR support for PDFs
-pip install datashield[ocr]
+pip install daytashield[ocr]
 
 # Development tools
-pip install datashield[dev]
+pip install daytashield[dev]
 
 # Documentation tools
-pip install datashield[docs]
+pip install daytashield[docs]
 
 # Everything
-pip install datashield[all]
+pip install daytashield[all]
 ```
 
 ## Basic Concepts
@@ -48,7 +48,7 @@ Processors extract content from files:
 The `ValidationPipeline` chains validators together:
 
 ```python
-from datashield import ValidationPipeline, SchemaValidator, FreshnessValidator
+from daytashield import ValidationPipeline, SchemaValidator, FreshnessValidator
 
 pipeline = ValidationPipeline([
     SchemaValidator(schema=my_schema),
@@ -79,7 +79,7 @@ print(result.duration_ms) # Time taken
 ### 1. Schema Validation
 
 ```python
-from datashield import ValidationPipeline, SchemaValidator
+from daytashield import ValidationPipeline, SchemaValidator
 
 schema = {
     "type": "object",
@@ -106,7 +106,7 @@ for error in result.errors:
 ### 2. File Validation
 
 ```python
-from datashield import ValidationPipeline, SchemaValidator, PDFProcessor
+from daytashield import ValidationPipeline, SchemaValidator, PDFProcessor
 
 pipeline = ValidationPipeline([SchemaValidator(schema=doc_schema)])
 pipeline.add_processor(".pdf", PDFProcessor())
@@ -117,7 +117,7 @@ result = pipeline.validate_file("document.pdf")
 ### 3. Compliance Checking
 
 ```python
-from datashield import ValidationPipeline, ComplianceValidator
+from daytashield import ValidationPipeline, ComplianceValidator
 
 pipeline = ValidationPipeline([
     ComplianceValidator(rules=["hipaa", "pii"]),
@@ -131,7 +131,7 @@ for msg in result.messages:
 ### 4. Data Routing
 
 ```python
-from datashield import ValidationPipeline, DataRouter, RouteAction
+from daytashield import ValidationPipeline, DataRouter, RouteAction
 
 pipeline = ValidationPipeline([...])
 router = DataRouter()
@@ -147,20 +147,20 @@ elif decision.route.action == RouteAction.QUARANTINE:
 
 ## CLI Usage
 
-DataShield includes a command-line interface:
+DaytaShield includes a command-line interface:
 
 ```bash
 # Validate a file
-datashield validate invoice.pdf --schema invoice.json
+daytashield validate invoice.pdf --schema invoice.json
 
 # Validate with compliance rules
-datashield validate ./data/ --rules hipaa --rules pii
+daytashield validate ./data/ --rules hipaa --rules pii
 
 # Watch for new files
-datashield watch ./incoming/ --rules hipaa
+daytashield watch ./incoming/ --rules hipaa
 
 # View audit log
-datashield audit ./audit.jsonl --stats
+daytashield audit ./audit.jsonl --stats
 ```
 
 ## Next Steps
@@ -168,4 +168,4 @@ datashield audit ./audit.jsonl --stats
 - [Validators Guide](validators.md) - Deep dive into each validator
 - [Processors Guide](processors.md) - Working with different file formats
 - [API Reference](api-reference.md) - Complete API documentation
-- [Examples](https://github.com/datashield/datashield/tree/main/examples) - More example code
+- [Examples](https://github.com/daytashield/daytashield/tree/main/examples) - More example code

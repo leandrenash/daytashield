@@ -1,6 +1,6 @@
 # Validators Guide
 
-DataShield provides four built-in validators for comprehensive data quality assurance.
+DaytaShield provides four built-in validators for comprehensive data quality assurance.
 
 ## SchemaValidator
 
@@ -9,7 +9,7 @@ Validates data structure against JSON Schema or Pydantic models.
 ### JSON Schema Validation
 
 ```python
-from datashield import SchemaValidator
+from daytashield import SchemaValidator
 
 schema = {
     "type": "object",
@@ -28,7 +28,7 @@ validator = SchemaValidator(schema=schema)
 
 ```python
 from pydantic import BaseModel, EmailStr
-from datashield import SchemaValidator
+from daytashield import SchemaValidator
 
 class User(BaseModel):
     id: int
@@ -41,7 +41,7 @@ validator = SchemaValidator(model=User)
 ### Configuration
 
 ```python
-from datashield.validators.schema import SchemaValidator, SchemaValidatorConfig
+from daytashield.validators.schema import SchemaValidator, SchemaValidatorConfig
 
 validator = SchemaValidator(
     schema=schema,
@@ -60,7 +60,7 @@ Uses LLMs for content-aware validation that goes beyond schema checks.
 ### Basic Usage
 
 ```python
-from datashield import SemanticValidator
+from daytashield import SemanticValidator
 
 validator = SemanticValidator(
     prompt="Check if this document is a valid business invoice",
@@ -71,7 +71,7 @@ validator = SemanticValidator(
 ### Configuration
 
 ```python
-from datashield.validators.semantic import SemanticValidator, SemanticValidatorConfig
+from daytashield.validators.semantic import SemanticValidator, SemanticValidatorConfig
 
 validator = SemanticValidator(
     prompt="Verify this customer support ticket is appropriate",
@@ -100,7 +100,7 @@ Ensures data isn't stale by checking timestamps.
 ### Basic Usage
 
 ```python
-from datashield import FreshnessValidator
+from daytashield import FreshnessValidator
 
 # Data must be less than 7 days old
 validator = FreshnessValidator(max_age="7d")
@@ -126,7 +126,7 @@ Supported duration formats:
 ### Configuration
 
 ```python
-from datashield.validators.freshness import FreshnessValidator, FreshnessValidatorConfig
+from daytashield.validators.freshness import FreshnessValidator, FreshnessValidatorConfig
 
 validator = FreshnessValidator(
     max_age="7d",
@@ -144,7 +144,7 @@ Checks for regulatory compliance with pluggable rule packs.
 ### Using Built-in Rules
 
 ```python
-from datashield import ComplianceValidator
+from daytashield import ComplianceValidator
 
 # Single rule
 validator = ComplianceValidator(rules=["hipaa"])
@@ -165,7 +165,7 @@ Detects Protected Health Information (PHI):
 - DEA numbers
 
 ```python
-from datashield.rules import HIPAARules
+from daytashield.rules import HIPAARules
 
 rules = HIPAARules(strict=True)  # Also check general PII in healthcare context
 ```
@@ -178,7 +178,7 @@ Checks EU data protection compliance:
 - Cross-border indicators
 
 ```python
-from datashield.rules import GDPRRules
+from daytashield.rules import GDPRRules
 
 rules = GDPRRules(
     check_consent=True,
@@ -199,7 +199,7 @@ Scans for personally identifiable information:
 - Driver's license numbers
 
 ```python
-from datashield.rules import PIIDetector
+from daytashield.rules import PIIDetector
 
 detector = PIIDetector(
     patterns=["ssn", "credit_card", "email"],  # Specific patterns only
@@ -212,7 +212,7 @@ detector = PIIDetector(
 Create custom compliance rules:
 
 ```python
-from datashield.rules.base import ComplianceRule, ComplianceViolation
+from daytashield.rules.base import ComplianceRule, ComplianceViolation
 
 class MyCustomRule(ComplianceRule):
     name = "my_rule"
@@ -233,7 +233,7 @@ class MyCustomRule(ComplianceRule):
         return violations
 
 # Use in ComplianceValidator
-from datashield import ComplianceValidator
+from daytashield import ComplianceValidator
 validator = ComplianceValidator(rules=[MyCustomRule()])
 ```
 
@@ -242,7 +242,7 @@ validator = ComplianceValidator(rules=[MyCustomRule()])
 Use `ValidationPipeline` to chain validators:
 
 ```python
-from datashield import (
+from daytashield import (
     ValidationPipeline,
     SchemaValidator,
     SemanticValidator,

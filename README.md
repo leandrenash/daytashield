@@ -1,21 +1,21 @@
-# 🛡️ DataShield
+# 🛡️ DaytaShield
 
-[![PyPI version](https://badge.fury.io/py/datashield.svg)](https://badge.fury.io/py/datashield)
+[![PyPI version](https://badge.fury.io/py/daytashield.svg)](https://badge.fury.io/py/daytashield)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **The missing validation layer between unstructured data and AI systems.**
 
-DataShield validates multimodal data (PDFs, CSVs, JSON, images) before it reaches your RAG pipelines, AI agents, or analytics systems. Stop hallucinations at the source.
+DaytaShield validates multimodal data (PDFs, CSVs, JSON, images) before it reaches your RAG pipelines, AI agents, or analytics systems. Stop hallucinations at the source.
 
 ## 🚀 Quick Start
 
 ```bash
-pip install datashield
+pip install daytashield
 ```
 
 ```python
-from datashield import ValidationPipeline, SchemaValidator, FreshnessValidator
+from daytashield import ValidationPipeline, SchemaValidator, FreshnessValidator
 
 # Create a validation pipeline
 pipeline = ValidationPipeline([
@@ -48,7 +48,7 @@ print(result.status)  # ValidationStatus.PASSED
 ### Validate Files
 
 ```python
-from datashield import ValidationPipeline, SchemaValidator, PDFProcessor
+from daytashield import ValidationPipeline, SchemaValidator, PDFProcessor
 
 # Create pipeline with processors
 pipeline = ValidationPipeline([
@@ -66,7 +66,7 @@ if result.failed:
 ### Compliance Checking
 
 ```python
-from datashield import ValidationPipeline, ComplianceValidator
+from daytashield import ValidationPipeline, ComplianceValidator
 
 # Check for HIPAA and PII violations
 pipeline = ValidationPipeline([
@@ -82,8 +82,8 @@ for message in result.messages:
 
 ```python
 from langchain_community.vectorstores import FAISS
-from datashield import SchemaValidator, FreshnessValidator
-from datashield.integrations.langchain import ValidatedRetriever
+from daytashield import SchemaValidator, FreshnessValidator
+from daytashield.integrations.langchain import ValidatedRetriever
 
 # Wrap your retriever with validation
 retriever = ValidatedRetriever(
@@ -102,7 +102,7 @@ docs = retriever.invoke("What is the refund policy?")
 ### Routing Based on Validation
 
 ```python
-from datashield import ValidationPipeline, DataRouter, RouteAction
+from daytashield import ValidationPipeline, DataRouter, RouteAction
 
 pipeline = ValidationPipeline([...])
 router = DataRouter()
@@ -120,16 +120,16 @@ elif decision.route.action == RouteAction.QUARANTINE:
 
 ```bash
 # Validate files
-datashield validate invoice.pdf --schema invoice.json
+daytashield validate invoice.pdf --schema invoice.json
 
 # Validate with compliance rules
-datashield validate ./data/ --rules hipaa --rules pii
+daytashield validate ./data/ --rules hipaa --rules pii
 
 # Watch directory for new files
-datashield watch ./incoming/ --rules hipaa --audit audit.jsonl
+daytashield watch ./incoming/ --rules hipaa --audit audit.jsonl
 
 # Query audit log
-datashield audit audit.jsonl --status failed --limit 10
+daytashield audit audit.jsonl --status failed --limit 10
 ```
 
 ## 📦 Validators
@@ -159,10 +159,10 @@ datashield audit audit.jsonl --status failed --limit 10
 
 ## 📊 Audit Trail
 
-DataShield maintains an immutable audit log of all validation operations:
+DaytaShield maintains an immutable audit log of all validation operations:
 
 ```python
-from datashield import AuditTrail, ValidationPipeline
+from daytashield import AuditTrail, ValidationPipeline
 
 # Enable audit logging
 audit = AuditTrail("./audit.jsonl")
@@ -201,7 +201,7 @@ print(f"Pass rate: {stats['by_status']['passed'] / stats['total'] * 100:.1f}%")
 ## 🔧 Configuration
 
 ```python
-from datashield import ValidationPipeline, PipelineConfig
+from daytashield import ValidationPipeline, PipelineConfig
 
 pipeline = ValidationPipeline(
     validators=[...],
@@ -219,8 +219,8 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ```bash
 # Clone the repo
-git clone https://github.com/datashield/datashield.git
-cd datashield
+git clone https://github.com/daytashield/daytashield.git
+cd daytashield
 
 # Install dev dependencies
 pip install -e ".[dev]"
@@ -238,10 +238,10 @@ Apache 2.0 - see [LICENSE](LICENSE) for details.
 
 ## 🔗 Links
 
-- [Documentation](https://datashield.dev/docs)
-- [PyPI](https://pypi.org/project/datashield/)
-- [GitHub](https://github.com/datashield/datashield)
-- [Discord](https://discord.gg/datashield)
+- [Documentation](https://daytashield.dev/docs)
+- [PyPI](https://pypi.org/project/daytashield/)
+- [GitHub](https://github.com/daytashield/daytashield)
+- [Discord](https://discord.gg/daytashield)
 
 ---
 

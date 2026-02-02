@@ -1,4 +1,4 @@
-"""Pytest configuration and fixtures for DataShield tests."""
+"""Pytest configuration and fixtures for DaytaShield tests."""
 
 from __future__ import annotations
 
@@ -9,13 +9,13 @@ from typing import Any
 
 import pytest
 
-from datashield import (
+from daytashield import (
     ComplianceValidator,
     FreshnessValidator,
     SchemaValidator,
     ValidationPipeline,
 )
-from datashield.core.result import ValidationResult, ValidationStatus
+from daytashield.core.result import ValidationResult, ValidationStatus
 
 
 @pytest.fixture

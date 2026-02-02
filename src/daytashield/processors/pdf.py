@@ -7,8 +7,8 @@ from typing import Any, BinaryIO
 
 from pydantic import Field
 
-from datashield.core.result import ValidationResult, ValidationStatus
-from datashield.processors.base import BaseProcessor, ProcessedData, ProcessorConfig
+from daytashield.core.result import ValidationResult, ValidationStatus
+from daytashield.processors.base import BaseProcessor, ProcessedData, ProcessorConfig
 
 
 class PDFProcessorConfig(ProcessorConfig):

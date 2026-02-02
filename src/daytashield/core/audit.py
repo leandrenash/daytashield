@@ -11,7 +11,7 @@ from uuid import UUID
 import orjson
 from pydantic import BaseModel, Field
 
-from datashield.core.result import ValidationResult, ValidationStatus
+from daytashield.core.result import ValidationResult, ValidationStatus
 
 
 class AuditEntry(BaseModel):

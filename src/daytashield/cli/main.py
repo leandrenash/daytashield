@@ -1,4 +1,4 @@
-"""DataShield command-line interface."""
+"""DaytaShield command-line interface."""
 
 from __future__ import annotations
 
@@ -15,17 +15,17 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.table import Table
 from rich.tree import Tree
 
-from datashield import __version__
-from datashield.core.audit import AuditTrail
-from datashield.core.pipeline import ValidationPipeline
-from datashield.core.result import ValidationResult, ValidationStatus
-from datashield.core.router import DataRouter, RouteAction
-from datashield.processors.csv import CSVProcessor
-from datashield.processors.json import JSONProcessor
-from datashield.processors.pdf import PDFProcessor
-from datashield.validators.compliance import ComplianceValidator
-from datashield.validators.freshness import FreshnessValidator
-from datashield.validators.schema import SchemaValidator
+from daytashield import __version__
+from daytashield.core.audit import AuditTrail
+from daytashield.core.pipeline import ValidationPipeline
+from daytashield.core.result import ValidationResult, ValidationStatus
+from daytashield.core.router import DataRouter, RouteAction
+from daytashield.processors.csv import CSVProcessor
+from daytashield.processors.json import JSONProcessor
+from daytashield.processors.pdf import PDFProcessor
+from daytashield.validators.compliance import ComplianceValidator
+from daytashield.validators.freshness import FreshnessValidator
+from daytashield.validators.schema import SchemaValidator
 
 console = Console()
 
@@ -52,9 +52,9 @@ def format_duration(ms: float | None) -> str:
 
 
 @click.group()
-@click.version_option(version=__version__, prog_name="datashield")
+@click.version_option(version=__version__, prog_name="daytashield")
 def cli() -> None:
-    """DataShield: Validate multimodal data for AI systems.
+    """DaytaShield: Validate multimodal data for AI systems.
 
     The missing validation layer between unstructured data and AI.
     """
@@ -121,11 +121,11 @@ def validate(
 
     Examples:
 
-        datashield validate invoice.pdf --schema invoice.json
+        daytashield validate invoice.pdf --schema invoice.json
 
-        datashield validate ./data/ --rules hipaa --rules pii
+        daytashield validate ./data/ --rules hipaa --rules pii
 
-        datashield validate report.csv --max-age 7d --output results.json
+        daytashield validate report.csv --max-age 7d --output results.json
     """
     # Build pipeline
     pipeline = _build_pipeline(schema, rules, max_age, fail_fast)
@@ -217,7 +217,7 @@ def watch(
 
     Example:
 
-        datashield watch ./incoming/ --rules hipaa --audit ./audit.jsonl
+        daytashield watch ./incoming/ --rules hipaa --audit ./audit.jsonl
     """
     try:
         from watchdog.events import FileSystemEventHandler
@@ -310,7 +310,7 @@ def audit(
 
     Example:
 
-        datashield audit ./audit.jsonl --status failed --limit 10
+        daytashield audit ./audit.jsonl --status failed --limit 10
     """
     trail = AuditTrail(audit_file)
 
@@ -361,12 +361,12 @@ def audit(
 
 @cli.command()
 def info() -> None:
-    """Show DataShield configuration and status."""
-    tree = Tree("[bold]DataShield[/bold]")
+    """Show DaytaShield configuration and status."""
+    tree = Tree("[bold]DaytaShield[/bold]")
 
     # Version info
     version_branch = tree.add("[cyan]Version[/cyan]")
-    version_branch.add(f"datashield: {__version__}")
+    version_branch.add(f"daytashield: {__version__}")
 
     # Available validators
     validators_branch = tree.add("[cyan]Validators[/cyan]")

@@ -1,11 +1,11 @@
-"""DataShield LangChain Integration Example.
+"""DaytaShield LangChain Integration Example.
 
-This example demonstrates how to use DataShield with LangChain
+This example demonstrates how to use DaytaShield with LangChain
 to validate documents in a RAG (Retrieval Augmented Generation) pipeline.
 """
 
-from datashield import FreshnessValidator, SchemaValidator, ValidationPipeline
-from datashield.integrations.langchain import ValidatedRetriever, ValidationError
+from daytashield import FreshnessValidator, SchemaValidator, ValidationPipeline
+from daytashield.integrations.langchain import ValidatedRetriever, ValidationError
 
 # Note: This example requires langchain and a vector store to be installed
 # pip install langchain langchain-community faiss-cpu
@@ -14,7 +14,7 @@ from datashield.integrations.langchain import ValidatedRetriever, ValidationErro
 def mock_retriever_example() -> None:
     """Demonstrate ValidatedRetriever with mock data."""
     print("=" * 60)
-    print("DataShield LangChain Integration Example")
+    print("DaytaShield LangChain Integration Example")
     print("=" * 60)
 
     # In a real application, you would create a vector store like this:
@@ -131,7 +131,7 @@ Example usage:
     print("""
 For content-aware validation, you can add SemanticValidator:
 
-    from datashield import SemanticValidator
+    from daytashield import SemanticValidator
     
     validators = [
         SchemaValidator(schema=doc_schema),

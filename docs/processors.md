@@ -1,6 +1,6 @@
 # Processors Guide
 
-DataShield processors extract content and metadata from various file formats.
+DaytaShield processors extract content and metadata from various file formats.
 
 ## PDFProcessor
 
@@ -9,7 +9,7 @@ Extracts text and metadata from PDF documents using pdfplumber.
 ### Basic Usage
 
 ```python
-from datashield import PDFProcessor, ValidationPipeline
+from daytashield import PDFProcessor, ValidationPipeline
 
 processor = PDFProcessor()
 pipeline = ValidationPipeline([...])
@@ -26,7 +26,7 @@ page_count = result.data.page_count
 ### Configuration
 
 ```python
-from datashield.processors.pdf import PDFProcessor, PDFProcessorConfig
+from daytashield.processors.pdf import PDFProcessor, PDFProcessorConfig
 
 processor = PDFProcessor(config=PDFProcessorConfig(
     extract_images=False,   # Don't extract embedded images
@@ -57,7 +57,7 @@ metadata["tables"]      # Extracted tables (if enabled)
 For scanned PDFs, enable OCR:
 
 ```bash
-pip install datashield[ocr]
+pip install daytashield[ocr]
 ```
 
 ```python
@@ -73,7 +73,7 @@ Parses CSV and TSV files into structured records using pandas.
 ### Basic Usage
 
 ```python
-from datashield import CSVProcessor, ValidationPipeline
+from daytashield import CSVProcessor, ValidationPipeline
 
 processor = CSVProcessor()
 pipeline = ValidationPipeline([...])
@@ -90,7 +90,7 @@ quality = result.data.metadata["quality"]  # Quality metrics
 ### Configuration
 
 ```python
-from datashield.processors.csv import CSVProcessor, CSVProcessorConfig
+from daytashield.processors.csv import CSVProcessor, CSVProcessorConfig
 
 processor = CSVProcessor(config=CSVProcessorConfig(
     delimiter=",",          # Field delimiter
@@ -151,7 +151,7 @@ Handles JSON and JSON Lines files using orjson for speed.
 ### Basic Usage
 
 ```python
-from datashield import JSONProcessor, ValidationPipeline
+from daytashield import JSONProcessor, ValidationPipeline
 
 processor = JSONProcessor()
 pipeline = ValidationPipeline([...])
@@ -165,7 +165,7 @@ content = result.data.content  # Parsed JSON
 ### Configuration
 
 ```python
-from datashield.processors.json import JSONProcessor, JSONProcessorConfig
+from daytashield.processors.json import JSONProcessor, JSONProcessorConfig
 
 processor = JSONProcessor(config=JSONProcessorConfig(
     encoding="utf-8",           # File encoding
@@ -213,7 +213,7 @@ structure["max_array_length"]  # Longest array
 Process files directly without a pipeline:
 
 ```python
-from datashield import PDFProcessor
+from daytashield import PDFProcessor
 
 processor = PDFProcessor()
 result = processor.process("document.pdf")
@@ -230,7 +230,7 @@ else:
 Create custom processors for other formats:
 
 ```python
-from datashield.processors.base import BaseProcessor, ProcessedData
+from daytashield.processors.base import BaseProcessor, ProcessedData
 
 class XMLProcessor(BaseProcessor):
     name = "xml"

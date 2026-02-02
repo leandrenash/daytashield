@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any
 from pydantic import BaseModel, Field
 
 if TYPE_CHECKING:
-    from datashield.core.result import ValidationResult
+    from daytashield.core.result import ValidationResult
 
 
 class ValidatorConfig(BaseModel):
@@ -24,7 +24,7 @@ class ValidatorConfig(BaseModel):
 
 
 class BaseValidator(ABC):
-    """Abstract base class for all DataShield validators.
+    """Abstract base class for all DaytaShield validators.
 
     Validators are responsible for checking specific aspects of data quality.
     Each validator should focus on a single concern (schema, freshness, etc.).

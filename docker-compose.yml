@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  # DataShield CLI
-  datashield:
+  # DaytaShield CLI
+  daytashield:
     build: .
     volumes:
       - ./data:/data
@@ -11,8 +11,8 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY:-}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
 
-  # DataShield validation watch service
-  datashield-watch:
+  # DaytaShield validation watch service
+  daytashield-watch:
     build: .
     command: watch /data --rules hipaa --rules pii --audit /audit/audit.jsonl
     volumes:

@@ -7,8 +7,8 @@ from typing import Any, Type
 import jsonschema
 from pydantic import BaseModel, Field, ValidationError
 
-from datashield.core.result import ValidationResult, ValidationStatus
-from datashield.validators.base import BaseValidator, ValidatorConfig
+from daytashield.core.result import ValidationResult, ValidationStatus
+from daytashield.validators.base import BaseValidator, ValidatorConfig
 
 
 class SchemaValidatorConfig(ValidatorConfig):
