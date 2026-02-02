@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "daytashield"
-version = "0.1.0"
+version = "0.1.1"
 description = "The missing validation layer between unstructured data and AI systems"
 readme = "README.md"
 license = "Apache-2.0"
@@ -48,6 +48,7 @@ dependencies = [
     "langchain-core>=0.1",
     "python-dateutil>=2.8",
     "rich>=13.0",
+    "eval_type_backport>=0.2.0; python_version < '3.10'",
 ]
 
 [project.optional-dependencies]

@@ -32,7 +32,7 @@ from daytashield.validators.freshness import FreshnessValidator
 from daytashield.validators.schema import SchemaValidator
 from daytashield.validators.semantic import SemanticValidator
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = [
     # Core
     "ValidationPipeline",
